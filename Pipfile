@@ -4,10 +4,12 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-flask = "*"
+Flask = "*"
 celery = "*"
 redis = "*"
 python-dotenv = "*"
+Flask-SendGrid = "*"
+Flask-Mail = "*"
 
 [dev-packages]
 pylint = "*"

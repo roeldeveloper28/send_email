@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "a3b4e0dc8e2957e07511e38c6dd75eb15580449eb1d033b16a75f7eb75be5895"
+            "sha256": "8b68d5b8b7101fdf5d6246538f101facc2e4d1c7d53540354f19171131a4fafc"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -30,6 +30,12 @@
             ],
             "version": "==3.5.0.3"
         },
+        "blinker": {
+            "hashes": [
+                "sha256:471aee25f3992bd325afa3772f1063dbdbbca947a041b8b89466dc00d606f8b6"
+            ],
+            "version": "==1.4"
+        },
         "celery": {
             "hashes": [
                 "sha256:2082cbd82effa8ac8a8a58977d70bb203a9f362817e3b66f4578117b9f93d8a9",
@@ -52,6 +58,20 @@
             ],
             "index": "pypi",
             "version": "==1.0.2"
+        },
+        "flask-mail": {
+            "hashes": [
+                "sha256:22e5eb9a940bf407bcf30410ecc3708f3c56cc44b29c34e1726fe85006935f41"
+            ],
+            "index": "pypi",
+            "version": "==0.9.1"
+        },
+        "flask-sendgrid": {
+            "hashes": [
+                "sha256:be638cadbdb1b550dd563254c04d1d3b986427017f535d7cdcf650f40482f173"
+            ],
+            "index": "pypi",
+            "version": "==0.6"
         },
         "itsdangerous": {
             "hashes": [
@@ -87,6 +107,12 @@
             "index": "pypi",
             "version": "==0.8.2"
         },
+        "python-http-client": {
+            "hashes": [
+                "sha256:7e430f4b9dd2b621b0051f6a362f103447ea8e267594c602a5c502a0c694ee38"
+            ],
+            "version": "==3.1.0"
+        },
         "pytz": {
             "hashes": [
                 "sha256:65ae0c8101309c45772196b21b74c46b2e5d11b6275c45d251b150d5da334555",
@@ -101,6 +127,13 @@
             ],
             "index": "pypi",
             "version": "==2.10.6"
+        },
+        "sendgrid": {
+            "hashes": [
+                "sha256:7f58a59a1d1ead33ce06d1c420b06b4a99af849df1196c47946c91a49bb06c3e",
+                "sha256:c78f8ecf323f391535980106358f2d55a3caedc2d546ae6f70a77062e2ee03be"
+            ],
+            "version": "==5.4.0"
         },
         "vine": {
             "hashes": [
