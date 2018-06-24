@@ -22,7 +22,9 @@ def index():
 
 @app.route('/api/emails')
 def emails():
-    return 'List of emails'
+    tasks = redis_db.hgetall('task')
+    status = [{'state': get_status(sendmail.AsyncResult(k).state), 'email': v}  for k, v in tasks.items()]
+    return jsonify(status)
 
 @app.route('/api/send-email', methods=['POST'])
 def send_email():
