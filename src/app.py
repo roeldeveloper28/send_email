@@ -1,8 +1,7 @@
-from flask import json, url_for, request, Response
-from config import flask_app
+from flask import Response, json, jsonify, request, url_for
 
+from config import flask_app, redis_db
 from helpers import send_mail as sendmail
-
 
 app = flask_app
 
@@ -20,14 +19,9 @@ def send_email():
     try:
         
         data = request.get_json()
-
-        send_res = sendmail.delay(data['emails'], data['body'])
-        send_res.get()
-
-        if send_res.failed():
-            return  Response(json.dumps({ 'msg': 'Sending email failed!' }), status=400, mimetype='application/json')
+        sendmail.delay(data['emails'], data['body'])
         
-        return  Response(json.dumps({ 'msg': 'Email successfully sent!' }), status=200, mimetype='application/json')
+        return  Response(json.dumps({ 'msg': 'done sending email!' }), status=200, mimetype='application/json')
 
     except Exception as e:
         return  Response(e, status=500, mimetype='application/json')
