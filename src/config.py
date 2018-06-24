@@ -38,6 +38,6 @@ def app_setting():
 
 
 flask_app = app_setting()
-redis_db = Redis(host=os.getenv('REDIS_HOST'), port=os.getenv('REDIS_PORT'))
+redis_db = Redis(host=os.getenv('REDIS_HOST'), port=os.getenv('REDIS_PORT'), charset='utf-8', decode_responses=True)
 celery = make_celery(flask_app)
 mail = Mail(flask_app)
