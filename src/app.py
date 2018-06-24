@@ -32,7 +32,9 @@ def send_email():
     try:
         
         data = request.get_json()
-        sendmail.delay(data['emails'], data['body'])
+        task = sendmail.apply_async((data['email'], data['subject'], data['body']))
+
+        redis_db.hset('task', task.id, data['email'])
         
         return  Response(json.dumps({ 'msg': 'done sending email!' }), status=200, mimetype='application/json')
 
