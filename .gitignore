@@ -1,3 +1,6 @@
+# IDE folders
+.vscode/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -56,3 +59,9 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# Environment variables
+.env
+
+# Redis
+dump.rdb
