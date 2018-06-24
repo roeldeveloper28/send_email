@@ -1,21 +1,18 @@
-from config import Message, celery, mail, redis_db
+from config import Message, celery, mail
 
 
 @celery.task()
-def send_mail(emails, body):
+def send_mail(email, subject, body):
 
     try:
         msg = Message(
-            'Hello from Flask!', 
+            subject=subject, 
             sender='test@example.com',
-            recipients=[email for email in emails],
+            recipients=[email],
         )
         msg.body = body
 
         mail.send(msg)
-
-        for email in emails:
-            redis_db.sadd('emails', str(email))
 
     except Exception:
         raise RuntimeError('Something went wrong while sending email message.')
