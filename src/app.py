@@ -5,6 +5,17 @@ from helpers import send_mail as sendmail
 
 app = flask_app
 
+
+status_label = {
+    'PENDING': 'QUEUED',
+    'SUCCESS': 'SENT',
+    'FAILURE': 'FAILED'
+}
+
+def get_status(celery_state):
+    return status_label[celery_state]
+
+
 @app.route('/')
 def index():
     return 'Index page'
